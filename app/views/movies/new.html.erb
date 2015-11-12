@@ -70,6 +70,15 @@
         </label>
 
         <input type="text" id="director_id" name="director_id" placeholder="Director" class="form-control" value="<%= @movie.director_id %>">
+
+        <select>
+        <% Director.all.each do |director| %>
+        <option>
+          <%= director.name%>
+        </option>
+        <% end %>
+
+        </select>
       </div>
 
       <button class="btn btn-success">

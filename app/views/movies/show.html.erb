@@ -5,6 +5,9 @@
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
+      <dt>Image</dt>
+      <dd><img src="<%=@movie.image_url %>"></dd>
+
       <dt>Title</dt>
       <dd><%= @movie.title %></dd>
 
@@ -17,11 +20,9 @@
       <dt>Description</dt>
       <dd><%= @movie.description %></dd>
 
-      <dt>Image url</dt>
-      <dd><%= @movie.image_url %></dd>
-
       <dt>Director</dt>
-      <dd><%= @movie.director_id %></dd>
+      <dd><%= Director.find_by({:id => @movie.director_id}).name %>
+       (<%= Director.find_by({:id => @movie.director_id}).dob %>)</dd>
 
     </dl>
 
